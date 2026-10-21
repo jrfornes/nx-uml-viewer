@@ -1,0 +1,27 @@
+{
+  "name": "@nx-uml-viewer/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "nx-uml-viewer": "./dist/bin.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@nx-uml-viewer/angular": "workspace:*",
+    "@nx-uml-viewer/model": "workspace:*",
+    "@nx-uml-viewer/nx": "workspace:*",
+    "@nx-uml-viewer/typescript": "workspace:*",
+    "commander": "^14.0.2"
+  }
+}

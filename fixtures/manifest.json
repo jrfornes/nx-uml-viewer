@@ -1,0 +1,15 @@
+{
+  "fixtures": [
+    {
+      "id": "nx-angular-basic",
+      "layout": "integrated",
+      "packageManager": "pnpm",
+      "pinned": {
+        "nx": "23.3.0",
+        "typescript": "6.0.3",
+        "angular": "22.1.0"
+      },
+      "description": "Minimal Nx 23 Angular integrated workspace with a single application."
+    }
+  ]
+}
