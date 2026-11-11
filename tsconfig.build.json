@@ -1,0 +1,13 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/model" },
+    { "path": "./packages/nx" },
+    { "path": "./packages/typescript" },
+    { "path": "./packages/angular" },
+    { "path": "./packages/policy" },
+    { "path": "./packages/server" },
+    { "path": "./packages/cli" },
+    { "path": "./packages/web" }
+  ]
+}

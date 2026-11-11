@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "composite": true
+  },
+  "references": [
+    { "path": "../model" },
+    { "path": "../nx" },
+    { "path": "../typescript" },
+    { "path": "../angular" }
+  ],
+  "include": ["src/**/*.ts"]
+}

@@ -140,9 +140,9 @@ interface Evidence {
 }
 
 interface Provenance {
-  analyzer: "nx" | "typescript" | "angular" | "policy" | "user";
+  analyzer: 'nx' | 'typescript' | 'angular' | 'policy' | 'user';
   analyzerVersion: string;
-  confidence: "authoritative" | "resolved" | "heuristic";
+  confidence: 'authoritative' | 'resolved' | 'heuristic';
 }
 ```
 
@@ -157,11 +157,11 @@ A violation, cycle, or warning is not encoded by changing the edge kind.
 interface Finding {
   id: FindingId;
   ruleId: string;
-  severity: "info" | "warning" | "error";
+  severity: 'info' | 'warning' | 'error';
   subjectIds: string[];
   message: string;
   evidence: Evidence[];
-  source: "nx-policy" | "viewer-policy" | "analysis";
+  source: 'nx-policy' | 'viewer-policy' | 'analysis';
 }
 ```
 

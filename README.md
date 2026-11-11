@@ -21,3 +21,19 @@ root and will not depend on its Clojure or Quil runtime.
 
 The implementation plan is the execution checklist. The other documents hold
 the product and technical knowledge needed to make its decisions consistently.
+
+## Development (Milestone 0)
+
+Requirements: Node.js `>=20.19`, pnpm `10.x`.
+
+```bash
+pnpm install
+pnpm fixtures:install   # installs fixture workspace dependencies
+pnpm check              # format, lint, typecheck, dependency boundaries, tests
+pnpm doctor -- fixtures/nx-angular-basic
+```
+
+Packages live under `packages/` (`model`, `nx`, `typescript`, `angular`, `policy`,
+`server`, `cli`, `web`). Compatibility fixtures live under `fixtures/`.
+
+See [Compatibility matrix](docs/compatibility-matrix.md) for verified tool versions.

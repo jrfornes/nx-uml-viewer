@@ -173,7 +173,7 @@ Every analyzer returns structured diagnostics:
 ```ts
 interface Diagnostic {
   code: string;
-  severity: "info" | "warning" | "error";
+  severity: 'info' | 'warning' | 'error';
   message: string;
   location?: SourceLocation;
   analyzer: string;

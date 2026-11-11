@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+fixtures/**/node_modules
+fixtures/**/.nx
+pnpm-lock.yaml
+fixtures/**/pnpm-lock.yaml
+uml-viewer-master/**

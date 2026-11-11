@@ -104,18 +104,37 @@ contain executable configuration. The tool only claims support for forms
 covered by parity fixtures. Unsupported dynamic policy produces a diagnostic
 instead of a guessed result.
 
-## Open decisions for the bootstrap spike
+## D013: pnpm workspaces with TypeScript project references
 
-The following should not be fixed by documentation alone:
+**Status:** accepted (2026-10-21)
 
-1. Package workspace manager and build orchestrator for this repository.
-2. Exact supported Nx, Angular, TypeScript, and Node.js version matrix.
-3. Public Nx API or command-output strategy for each supported Nx major.
-4. Angular compiler API surface that is stable enough for enrichment.
-5. Browser framework and graph layout library.
-6. WebSocket versus server-sent events for live updates.
-7. Default OS cache location versus workspace-local ignored state.
-8. Editor integration protocol and cross-platform behavior.
+The implementation monorepo uses pnpm workspaces and `tsc -b` composite builds.
+Package boundaries are enforced with dependency-cruiser in CI. This keeps Milestone
+0 focused on typed packages without adopting Nx self-hosting for the tool itself.
 
-Resolve each through a small executable spike, fixture evidence, and an added
-decision entry.
+## D014: Initial compatibility matrix from fixtures
+
+**Status:** accepted (2026-10-21)
+
+Supported ranges live in `@nx-uml-viewer/model` and `docs/compatibility-matrix.md`.
+CI verifies Nx `23.3.0`, TypeScript `6.0.3`, Angular `22.1.0`, and Node `22.x`
+through `fixtures/nx-angular-basic`. Broader ranges remain declared but unverified
+until additional fixtures land.
+
+## D015: Nx project graph via `@nx/devkit`
+
+**Status:** accepted (2026-10-21)
+
+The Nx adapter loads the inspected workspace's `@nx/devkit` and calls the public
+`createProjectGraphAsync` and `readProjectsConfigurationFromProjectGraph` exports.
+Undocumented `nx/src/...` imports are forbidden. Graph computation runs with
+`NX_DAEMON=false` during tests to avoid daemon coupling.
+
+## Open decisions after Milestone 0
+
+1. Angular compiler API surface that is stable enough for enrichment.
+2. Browser framework and graph layout library.
+3. WebSocket versus server-sent events for live updates.
+4. Default OS cache location versus workspace-local ignored state.
+5. Editor integration protocol and cross-platform behavior.
+6. Secondary Nx major adapters when fixtures cover Nx 20–22 lines.
